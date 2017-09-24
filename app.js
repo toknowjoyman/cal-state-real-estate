@@ -20,7 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname))); //sdd public __dirname,'public' later
 
 app.use('/', index);
 app.use('/users', users);
@@ -43,4 +43,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(17008, function(){
+  console.log('This server is listening to port 17008');
+})
 module.exports = app;
