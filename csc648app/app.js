@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var about = require('./routes/about');
 
 var app = express();
 
@@ -43,7 +44,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(17008, function(){
-  console.log('This server is listening to port 17008');
-})
+
 module.exports = app;
