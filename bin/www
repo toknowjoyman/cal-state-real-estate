@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('csc648home:server');
+var debug = require('debug')('express-locallibrary-tutorial:server');
 var http = require('http');
 
 /**
@@ -14,7 +14,6 @@ var http = require('http');
 
 var port = normalizePort(process.env.PORT || '17008');
 app.set('port', port);
-// port added
 
 /**
  * Create HTTP server.
