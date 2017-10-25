@@ -31,5 +31,9 @@ router.get('/fa17g08/TeamMembers/ViditJoyManglani', function(req, res, next) {
   res.render('TeamMembers/ViditJoyManglani', { title: 'ViditPage' });
 });
 
+/*PROPERTY PAGE -KG*/
+router.get('/fa17g08/propertyPage', function(req, res, next) {
+    res.render('propertyPage', { title: 'PropertyPage' });
+});
 
 module.exports = router;
