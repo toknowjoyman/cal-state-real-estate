@@ -1,6 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
+var mysql = require('mysql');
+var app = express();
+
+function getSQLConnection(){
+  return mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "falco",
+    database: "fa17g08"
+  });
+}
+
+app.set('view engine', 'pug');
+
 /* GET home page. */
 router.get('/fa17g08', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -35,5 +49,45 @@ router.get('/fa17g08/TeamMembers/ViditJoyManglani', function(req, res, next) {
 router.get('/fa17g08/propertyPage', function(req, res, next) {
     res.render('propertyPage', { title: 'PropertyPage' });
 });
+
+/*GET Testing Page*/
+router.get('/fa17g08/testingPage', function(req, res, next) {
+    res.render('testingPage', { title: 'TestingPage' });
+});
+
+/*GET database */
+app.get('/property/:searchInput', function(req, res, next) {
+  var propertyList = [];
+  var connection = getSQLConnection();
+  console.log(req.params.searchInput);
+  connection.connect();
+
+  connection.query('SELECT * FROM Property', function(err, rows, fields)
+  {
+    if(err)
+    {
+      res.status(500).json({"status_code": 500, "status_message": "internal server error"});
+    } else
+    {
+      for (var i = 0; i < rows.length; i++)
+      {
+        var property =
+        {
+           'id':rows[i].PropertyID,
+           'address':rows[i].Address,
+           'city':rows[i].City,
+           'zipCode':rows[i].ZipCode,
+           'cost':rows[i].Cost,
+           'bedrooms':rows[i].Bedrooms,
+           'bathrooms':rows[i].Bathrooms
+        }
+        propertyList.push(property);
+      }
+    }
+    //CHANGE THIS
+    res.render('index', {"propertyList": propertyList})
+  });
+  connection.end();
+  });
 
 module.exports = router;
