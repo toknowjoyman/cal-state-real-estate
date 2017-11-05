@@ -55,11 +55,18 @@ router.get('/fa17g08/testingPage', function(req, res, next) {
     res.render('testingPage', { title: 'TestingPage' });
 });
 
+//falco:
+//property/?searchInput=1234
+//app->router; /property/:searchInput' delete last;
+
 /*GET database */
-app.get('/property/:searchInput', function(req, res, next) {
+router.get('/fa17g08/property', function(req, res, next) {
   var propertyList = [];
   var connection = getSQLConnection();
   console.log(req.params.searchInput);
+  //falco:
+  //res.send(req.param.searchInput);
+  //
   connection.connect();
 
   connection.query('SELECT * FROM Property', function(err, rows, fields)
@@ -85,7 +92,10 @@ app.get('/property/:searchInput', function(req, res, next) {
       }
     }
     //CHANGE THIS
-    res.render('index', {"propertyList": propertyList})
+    //res.render('index', {"propertyList": propertyList})
+    //Falco:
+    res.render('testingPage', {"propertyList": rows})
+
   });
   connection.end();
   });

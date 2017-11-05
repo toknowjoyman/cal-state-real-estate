@@ -1,8 +1,8 @@
-- var Address = "1234 Street"
-- var City = "San Francisco"
-- var Zip = "91741"
-- var Cost = "100000"
-- var Bedroom = "1"
+- var Address = "Address: "
+- var City = "City: "
+- var Zip = "ZIP: "
+- var Cost = "Price: "
+- var Bedroom = "Bedromms: "
 
 doctype html
 html(lang="en")
@@ -14,7 +14,7 @@ html(lang="en")
       p "Paragraph"
         a(href="link") This is the link text to be clicked
 
-      form(method='GET', action="./property")
+      form(method='GET', action="/fa17g08/property")
         div.form-group
           label(for='searchInput') Search:
           input(name="searchInput", type="text", id="ourid", placeholder="Search...")
@@ -23,8 +23,9 @@ html(lang="en")
 
       div
         ul
-          li #{Address}
-          li #{City}
-          li #{Zip}
-          li #{Cost}
-          li #{Bedroom}
+          li #{Address} #{propertyList[0].Address}
+          li #{City} #{propertyList[0].City}
+          li #{Zip} #{propertyList[0].Zip}
+          li #{Cost} #{propertyList[0].Cost}
+          li #{Bedroom} #{propertyList[0].Bedroom}
+          li #{propertyList[0].Address}
