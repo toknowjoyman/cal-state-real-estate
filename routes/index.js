@@ -65,7 +65,7 @@ router.get('/fa17g08/property', function(req, res, next) {
   var connection = getSQLConnection();
   console.log(req.params.searchInput);
   //falco:
-  //res.send(req.param.searchInput);
+  res.send(req.param.searchInput);
   //
   connection.connect();
 
@@ -95,7 +95,6 @@ router.get('/fa17g08/property', function(req, res, next) {
     //res.render('index', {"propertyList": propertyList})
     //Falco:
     res.render('testingPage', {"propertyList": rows})
-
   });
   connection.end();
   });
