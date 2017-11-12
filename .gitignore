@@ -1,4 +1,6 @@
 /.idea
 /.node modules
+/node modules
 .DS_Store
 package-lock.json
+/public/bower_components
