@@ -1,0 +1,52 @@
+extends layout
+include mixins.pug
+
+//- block navbar
+  .row
+    div.topstrip(style="width:100%;padding-bottom:20px; padding-top:20px;")
+      div.header
+       a(href="/")
+        img(src="/images/logo.png", style="text-align:middle;")
+       div.well.pngback#login(style="float:right;")
+        a.btn.btn-success.strange( href="#") Sign up 
+         i.icon.icon-ok-circle.icon-white
+        a.btn.btn-info(href="#") Log in 
+         i.icon.icon-user.icon-white
+        a.btn.btn-info(href="#", style="margin-left:10px;") Upload 
+         i.icon.icon-upload.icon-white
+       div.well.pngback(style="float:right;height:28px; margin-right:20px;")
+         form
+          button.btn.btn-info(type="submit", style="float:right;margin-left:10px;",)
+           i.icon-search.icon-white
+          input.form-inline.input-append(type="text", placeholder="Search", style="float:right;")
+       div.navbar(style="margin-bottom:-20px; margin-top:10px")
+        div(style="padding:7px;margin-bottom:-20px; background:transparent;")
+         div.container
+          a.btn.btn-info.navdan(href="/") Home 
+           i.icon.icon-home.icon-white
+          a.btn.btn-info.navdan(href="/about") About Us
+           i.icon.icon-gift.icon-whiten-gift.icon-white
+block content
+  h1= title
+  p Welcome to #{title}
+  
+  div.container
+    
+    //- need to add appr links to change reg form 
+    +dropup("Account Type",[
+    {text:"Agent",url:"http://www.getbootstrap.com"},
+    {text:"Buyer",url:"http://www.jade-lang.com"},
+    {text:"Owner",url:"http://www.nodejs.org"}
+    ])
+    +input-fancy("Username:", "*")
+      +input-simple("text","txtName","Name","Used to Login")
+    +input-fancy("Password:", "")
+      +input-simple("text","txtName","At least 6 alphanumeric characters","Password")
+    +input-fancy("Confirm:", "")
+      +input-simple("text","txtName","Password","Confirm")
+    +input-fancy("Email:", "")
+      +input-simple("text","txtName","unverified","Email")
+    +input("text","txtName","Agent or Owner Code","")
+    +checkbox("I agree to the Terms and Conditions")
+    +submit("Register")
+      

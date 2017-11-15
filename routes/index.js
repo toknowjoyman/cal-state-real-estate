@@ -50,6 +50,15 @@ router.get('/fa17g08/propertyPage', function(req, res, next) {
     res.render('propertyPage', { title: 'PropertyPage' });
 });
 
+/*DASHBOARD PAGE -FB*/
+router.get('/fa17g08/userDashboard', function(req, res, next) {
+    res.render('dash_test', { title: 'Your Dashboard' });
+});
+
+router.get('/fa17g08/signUp', function(req, res, next) {
+    res.render('regPage_wip', { title: 'Sing Up at our Page!' });
+});
+
 /*GET Testing Page*/
 router.get('/fa17g08/testingPage', function(req, res, next) {
     res.render('testingPage', { title: 'TestingPage' });

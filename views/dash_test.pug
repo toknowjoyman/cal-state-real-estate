@@ -1,0 +1,16 @@
+extends layout
+include mixins.pug
+include dash_mixins.pug
+
+block content
+  +tab-list(["Home","Properties","Messages"],0)
+    +tab("Home","active")
+      h1 Home
+      p This is Home tab
+    +tab("Properties")
+      h1 Property Listings
+      p This is Properties tab
+    +tab("Messages")
+     h1 Messages
+     p This is Messages tab
+    
