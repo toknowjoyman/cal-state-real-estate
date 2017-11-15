@@ -1,28 +1,79 @@
 <!DOCTYPE html>
-<html>
-<head>
-
-</head>
+ <html>
+     <head>
+         link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+         link(rel='stylesheet', href='/stylesheets/bootstrap.css', type='text/css')
+         link(rel='stylesheet', href='/stylesheets/bootstrap-grid.css', type='text/css')
+         link(rel='stylesheet', href='/stylesheets/bootstrap-reboot.css', type='text/css')
+     </head>
 
 <body>
-
-<div class =" ">
-        <form>
-            <input type="text" name="search" placeholder="Search.." onclick=query()>
-        </form>
+<header>
+<div class="card text-center">
+<p>!!! Disclaimer: this is not an active page - this is a SFSU-class-project !!! Group 08 of section 02 (global) </p>
+<p>Get us to know!</p>
 </div>
+<a id= "button">
+<input  type="button" class="button-index" value="ABOUT US" onclick="window.location.href='/fa17g08/TeamMembers'" />
+<input  type="button" class="button-index" value="GUEST" onclick="alert('WE DONT HAVE ANYTHING YOU ARE LOOKING FOR')" />
+<input  type="button" class="button-log" value="LOG IN" onclick="alert('YOU CANT LOG IN NOW! SORRY!')" />
+</a>
+
+<form>
+<input type="text" name="search" placeholder="Search.." onclick=query()>
+<button type="button" class="btn btn-secondary" onclick=>Search</button>
+</form>
+
+<ul class="nav justify-content-center">
+
+<li class="nav-item">
+<a class="nav-link active" href="/fa17g08">INDEX</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">BUY</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">SELL</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="/fa17g08/propertyPage">PROPERTY PAGE</a>
+</li>
+</ul>
+</header>
+
+
 
 <section class="intro">
-    <row>
-        <div class="left">
-<p> PROPERTY PAGE </p>
+<row>
+<div class="leftPP">
+<img class="d-block w-100" src='/pics/living.jpg' alt="Second slide">
+
 </div>
 
-<div class="right">
-<p> GOOGLE MAP </p>
+<div class="rightPP">
+<div>
+<div class="containerU">
+<h1>kitchen</h1>
+</div>
+
+<div class="containerU1w">
+<h1>bath</h1>
+</div>
+</div>
+
+<div>
+<div class="containerD">
+<h1>bed</h1>
+</div>
+
+<div class="containerD1">
+<h1>city map</h1>
+</div>
 </div>
 </row>
 </section>
-
 </body>
 </html>

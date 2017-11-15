@@ -1,34 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Team-Members</title>
-</head>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <title>Team-Members</title>
+ link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+ link(rel='stylesheet', href='/stylesheets/bootstrap.css', type='text/css')
+ link(rel='stylesheet', href='/stylesheets/bootstrap-grid.css', type='text/css')
+ link(rel='stylesheet', href='/stylesheets/bootstrap-reboot.css', type='text/css')
+ </head>
 
-<body>
-
-<p>!!! Disclaimer: this is not an active page - this is a SFSU-class-project !!!</p>
-<h1>Team-Members of Group 08 - global - Section 2</h1>
-<p>Team Lead: Falco Becker</p>
-<form>
-    <input type="button" value="Falco's info" onclick="window.location.href='/fa17g08/TeamMembers/FalcoBecker'" />
-</form>
-
-<p>2. Member: Richard Robinson</p>
-<form>
-    <input type="button" value="Richard's info" onclick="window.location.href='/fa17g08/TeamMembers/RichardRobinson'" />
-</form>
-
-<p>3. Member: Karan Gupta</p>
-<form>
-    <input type="button" value="Karan's info" onclick="window.location.href='/fa17g08/TeamMembers/KaranGupta'" />
-</form>
-
-<p>4. Member: Vidit Joy Manglan</p>
-<form>
-    <input type="button" value="Vidit's info" onclick="window.location.href='/fa17g08/TeamMembers/ViditJoyManglani'" />
-</form>
+ <body>
+ <header>
+ <a> <center> Disclaimer: this is not an active page - this is a SFSU-class-project !!! Group 08 of section 02 (global) </center> </a>
+ <h1 class = "titleCSRA"> <center> CAL STATE REAL ESTATE </center> </h1>
 
 
-</body>
-</html>
+ <a id= "button">
+ <input  type="button" class="button-index" value="ABOUT US" onclick="window.location.href='/fa17g08/TeamMembers'" />
+ <input  type="button" class="button-index" value="GUEST" onclick="alert('WE DONT HAVE ANYTHING YOU ARE LOOKING FOR')" />
+ <input  type="button" class="button-log" value="LOG IN" onclick="alert('YOU CANT LOG IN NOW! SORRY!')" />
+ </a>
+
+ <form>
+ <input type="text" name="search" placeholder="Search.." onclick=query()>
+ <button type="button" class="btn btn-secondary" onclick=>Search</button>
+ </form>
+
+ <ul class="nav justify-content-center">
+
+ <li class="nav-item">
+ <a type= "navBar" class="nav-link active" href="/fa17g08">INDEX</a>
+ </li>
+
+ <li class="nav-item">
+ <a class="nav-link" href="#">BUY</a>
+ </li>
+
+ <li class="nav-item">
+ <a class="nav-link" href="#">SELL</a>
+ </li>
+
+ <li class="nav-item">
+ <a class="nav-link" href="/fa17g08/propertyPage">PROPERTY PAGE</a>
+ </li>
+ </ul>
+ </header>
+
+ <section class="intro">
+     <row>
+         <h4 class="tmAlign"><center> BACKEND TEAM </center></h4>
+         <div class="row justify-content-around">
+
+             <div class="col-4">
+                 <p>1. Team Lead: Falco Becker</p>
+                 <form>
+                     <input type="button" class="button-index" value="Falco's info" onclick="window.location.href='/fa17g08/TeamMembers/FalcoBecker'" />
+                 </form>
+             </div>
+
+             <div class="col-4">
+                 <p>2. Member: Richard Robinson</p>
+                 <form>
+                     <input type="button" class="button-index" value="Richard's info" onclick="window.location.href='/fa17g08/TeamMembers/RichardRobinson'" />
+                 </form>
+             </div>
+         </div>
+
+         <h4 class="tmAlign"><center> FRONTEND TEAM </center></h4>
+         <div class="row justify-content-around">
+             <div class="col-4">
+                 <p>3. Member: Karan Gupta</p>
+                 <form>
+                     <input type="button" class="button-index" value="Karan's info" onclick="window.location.href='/fa17g08/TeamMembers/KaranGupta'" />
+                 </form>
+             </div>
+             <div class="col-4">
+                 <p>4. Member: Vidit Joy Manglan</p>
+                 <form>
+                     <input type="button" class="button-index" value="Vidit's info" onclick="window.location.href='/fa17g08/TeamMembers/ViditJoyManglani'" />
+                 </form>
+             </div>
+         </div>
+     </row>
+ </section>
