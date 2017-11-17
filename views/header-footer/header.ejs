@@ -22,7 +22,8 @@
         <li><a href="/fa17g08/properties">Properties</a></li>
         <li><a href="/fa17g08/sell-home">Sell a Home</a></li>
         <li><a href="/fa17g08/buy-home">Buy / Rent a Home</a></li>
-        <li *ngif="isLoggedIn"><a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="pointer dropdown-toggle">My Profile <span class="caret"></span></a>
+        <% if(false) { %>
+        <li    *ngif="isLoggedIn"><a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="pointer dropdown-toggle">My Profile <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a [routerlink]="['/edit-profile']" routerlinkactive="router-link-active" class="pointer">Edit Profile</a></li>
             <li><a [routerlink]="['/account-history']" routerlinkactive="router-link-active" class="pointer">Account History</a></li>
@@ -30,7 +31,9 @@
             <li><a (click)="logOut()" class="pointer">Log Out</a></li>
           </ul>
         </li>
-        <li *ngif="!isLoggedIn" class="dropdown"><a (click)="showForm()" class="pointer">Sign in / Create an account</a></li>
+        <%  } else { %>
+        <li><a (click)="showForm()" class="pointer">Sign in / Create an account</a></li>
+        <%  } %>
       </ul>
     </div>
   </div>

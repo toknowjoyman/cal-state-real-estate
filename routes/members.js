@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
         // console.log(`The result is: ${JSON.stringify(result)}`);
         // res.json({"output": result});
 
-        res.render("about-us/members", { team: result, title: "Members" }, (err, html) => {
+        res.render("about-us/members", { team: result, title: "Members : CAL STATE REAL ESTATE" }, (err, html) => {
             if (err) {
                 throw err;
                 res.status(404).send(`Sorry! Page not found!`);
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
 
 router.get('/:memberName', (req, res) => {
     var memberName = req.params.memberName;
-    res.render('about-us/' + memberName, {title: memberName}, (err, html) => {
+    res.render('about-us/' + memberName, {title: memberName + 'CAL STATE REAL ESTATE'}, (err, html) => {
         if (err) {
             throw err;
             res.status(404).send(`Sorry! Page for ${memberName} not found!`);

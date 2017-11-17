@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
-// Get members
-var membersController = require('../controllers/members');
 
 var app = express();
 // Import Database Config File
@@ -19,13 +17,12 @@ const conn = getSQLConnection();
 
 // Connect DB
 
-conn.connect((err) => {
-  if (err) {
-    throw err;
-  }
-  console.log("Mysql Connected!");
-});
-
+// conn.connect((err) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("Mysql Connected!");
+// });
 
 /* GET home page. */
 router.get('/fa17g08', function (req, res, next) {
@@ -44,30 +41,6 @@ router.get('/fa17g08/', function(req, res, next) {
       title: 'CAL STATE REAL ESTATE'
     }
   );
-});
-
-
-/* GET team page */
-membersController(router, db);
-
-/* GET memeber page */
-router.get('/fa17g08/TeamMembers/FalcoBecker', function(req, res, next) {
-  res.render('TeamMembers/FalcoBecker', { title: 'FalcoPage' });
-});
-
-/* GET team page */
-router.get('/fa17g08/TeamMembers/RichardRobinson', function(req, res, next) {
-  res.render('TeamMembers/Richard-Robinson', { title: 'RichardPage' });
-});
-
-/* GET team page */
-router.get('/fa17g08/TeamMembers/KaranGupta', function(req, res, next) {
-  res.render('TeamMembers/KaranGupta', { title: 'KaranPage' });
-});
-
-/* GET team page */
-router.get('/fa17g08/TeamMembers/ViditJoyManglani', function(req, res, next) {
-  res.render('TeamMembers/ViditJoyManglani', { title: 'ViditPage' });
 });
 
 /*PROPERTY PAGE -KG*/
