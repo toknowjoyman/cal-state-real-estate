@@ -33,22 +33,27 @@ const db = mysql.createConnection({
 //   console.log("Mysql Connected!");
 // });
 
-
-
 /* GET home page. */
-router.get('/fa17g08', function(req, res, next) {
-  res.render('index', { title: 'CAL STATE REAL ESTATE' });
+router.get('/fa17g08', function (req, res, next) {
+  res.render(
+    'index',
+    {
+      title: 'CAL STATE REAL ESTATE'
+    }
+  );
 });
 
 router.get('/fa17g08/', function(req, res, next) {
-  res.render('index', { title: 'CAL STATE REAL ESTATE' });
+  res.render(
+    'index',
+    {
+      title: 'CAL STATE REAL ESTATE'
+    }
+  );
 });
 
 /* GET team page */
-membersController(app, db);
-// router.get('/fa17g08/members', function(req, res, next) {
-//   res.render('about-us/about_us', { title: 'Team Members : CAL STATE REAL ESTATE' });
-// });
+membersController(router, db);
 
 /* GET memeber page */
 router.get('/fa17g08/TeamMembers/FalcoBecker', function(req, res, next) {
