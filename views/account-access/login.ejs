@@ -1,0 +1,20 @@
+<form [formgroup]="logInForm" (ngsubmit)="doLogIn()" class="box form-signin">
+  <div (click)="closeForm()" class="close">X</div>
+  <h3 class="form-signin-heading">Log In</h3>
+  <div class="error-login">{{errorMessage}}</div>
+  <label for="username" class="sr-only">Email</label>
+  <input id="username" type="email" placeholder="Email" required="" autofocus="" formcontrolname="email" class="form-control"/>
+  <label for="password" class="sr-only">Password</label>
+  <input id="password" type="password" placeholder="Password" required="" formcontrolname="password" class="form-control"/>
+  <button type="submit" [disabled]="!logInForm.valid" class="btn btn-lg btn-mga btn-block">Sign in</button>
+  <div class="checkbox">
+    <input id="remember-me" type="checkbox" formcontrolname="remember-me"/>
+    <label for="remember-me"> Remember me </label>
+  </div>
+  <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div> <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+  <ul>
+    <li><a (click)="showForgotPassword()" class="pointer">Forget Password</a></li>
+    <li><a (click)="showSignUp()" class="pointer">Create New Account</a></li>
+  </ul>
+</form>
+<div *ngif="loading" class="loading"><img src="../../assets/images/loading.jpg" alt=""/></div>

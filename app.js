@@ -12,7 +12,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -22,14 +22,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 app.use('/', index);
 app.use('/users', users);
 //app.use('/queries', queries);
 //app.use('/stylesheets', express.static(__dirname, 'public', 'stylesheets'));
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+
+app.use(function (req, res, next) {
   console.log(req);
   var err = new Error('Not Found');
   err.status = 404;

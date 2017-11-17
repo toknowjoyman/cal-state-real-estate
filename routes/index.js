@@ -4,6 +4,9 @@ var router = express.Router();
 var mysql = require('mysql');
 var app = express();
 
+// Get members
+var membersController = require('../controllers/members');
+
 function getSQLConnection(){
   return mysql.createConnection({
     host: "localhost",
@@ -13,19 +16,41 @@ function getSQLConnection(){
   });
 }
 
-app.set('view engine', 'pug');
+
+// Create Connection
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'yourpassword',
+  database: 'yourdatabase'
+});
+
+// Connect DB
+// db.connect((err) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("Mysql Connected!");
+// });
+
+
 
 /* GET home page. */
 router.get('/fa17g08', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'CAL STATE REAL ESTATE' });
+});
+
+router.get('/fa17g08/', function(req, res, next) {
+  res.render('index', { title: 'CAL STATE REAL ESTATE' });
 });
 
 /* GET team page */
-router.get('/fa17g08/TeamMembers', function(req, res, next) {
-  res.render('TeamMembers', { title: 'TeamMembers' });
-});
+membersController(app, db);
+// router.get('/fa17g08/members', function(req, res, next) {
+//   res.render('about-us/about_us', { title: 'Team Members : CAL STATE REAL ESTATE' });
+// });
 
-/* GET team page */
+/* GET memeber page */
 router.get('/fa17g08/TeamMembers/FalcoBecker', function(req, res, next) {
   res.render('TeamMembers/FalcoBecker', { title: 'FalcoPage' });
 });
