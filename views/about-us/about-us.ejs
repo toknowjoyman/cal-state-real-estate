@@ -1,0 +1,52 @@
+<% include  ../header-footer/header.ejs %>
+
+<div class="banner2">
+    <div class="wrap container">
+        <h3>Our Team</h3>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="container">
+        <div class="row memberList">
+            <ul>
+                <% for (var i = 0; i < team.length; i++){ %>
+                    <a href="/fa17g08/profile/<%= team[i].page_name %>" target="_blank">
+                        <li>
+                            <div class="col-md-3 member">
+                                <div class="team-member">
+                                    <div class="member">
+                                        <div class="memberinfo text-center">
+                                            <img src="<%= team[i].picture %>" alt="<%= team[i].name %>">
+                                            <h3>
+                                                <%= team[i].name %>
+                                            </h3>
+                                            <p>
+                                                <%= team[i].designation %>
+                                            </p>
+                                        </div>
+                                        <div class="profile-overlay">
+                                            <div class="overlay-content">
+                                                <p class="profile">
+                                                    <%= team[i].profile %>
+                                                </p>
+                                                <h3>
+                                                    <%= team[i].name %>
+                                                </h3>
+                                                <p>
+                                                    <%= team[i].designation %>
+                                                </p>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </a>
+                    <%} %>
+            </ul>
+        </div>
+    </div>
+
+
+<% include  ../header-footer/footer.ejs %>

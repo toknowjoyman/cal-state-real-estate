@@ -1,0 +1,22 @@
+<form [formgroup]="signUpForm" (ngsubmit)="doSignUp()" class="box form-signin">
+  <div (click)="closeForm()" class="close">X</div>
+  <h3 class="form-signin-heading">Create New Account</h3>
+  <div class="error-login">{{errorMessage}}</div>
+  <label for="username" class="sr-only">Email Address</label>
+  <input id="username" type="email" placeholder="Email Address" required="" autofocus="" formcontrolname="email" (keyup)="clearError()" class="form-control"/>
+  <div [hidden]="this.signUpForm.controls['email'].valid || this.signUpForm.controls['email'].pristine" class="alert alert-dismissible alert-warning alert-mine">
+    <p>Use a valid email address.</p>
+  </div>
+  <label for="password" class="sr-only">Password</label>
+  <input id="password" type="password" placeholder="Password" required="" formcontrolname="password" (keyup)="clearError()" class="form-control"/>
+  <div [hidden]="this.signUpForm.controls['password'].valid || this.signUpForm.controls['password'].pristine" class="alert alert-dismissible alert-warning alert-mine">
+    <p>Password must contain at least a symbol, number, mixed cases, and minimum of 8 characters long.</p>
+  </div>
+  <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-lg btn-mga btn-block">Create new account</button>
+  <!-- <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div> <div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+  <ul>
+    <li><a (click)="showForgotPassword()" class="pointer">Forgot Password</a></li>
+    <li><a (click)="showLogIn()" class="pointer">Log In</a></li>
+  </ul>
+</form>
+<div *ngif="loading" class="loading"><img src="../../assets/images/loading.jpg" alt=""/></div>
