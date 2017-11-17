@@ -18,6 +18,7 @@ function getSQLConnection(){
 const conn = getSQLConnection();
 
 // Connect DB
+
 conn.connect((err) => {
   if (err) {
     throw err;
@@ -25,14 +26,29 @@ conn.connect((err) => {
   console.log("Mysql Connected!");
 });
 
+
 /* GET home page. */
-router.get('/fa17g08', function(req, res, next) {
-  res.render('index', { title: 'CAL STATE REAL ESTATE' });
+router.get('/fa17g08', function (req, res, next) {
+  res.render(
+    'index',
+    {
+      title: 'CAL STATE REAL ESTATE'
+    }
+  );
 });
 
 router.get('/fa17g08/', function(req, res, next) {
-  res.render('index', { title: 'CAL STATE REAL ESTATE' });
+  res.render(
+    'index',
+    {
+      title: 'CAL STATE REAL ESTATE'
+    }
+  );
 });
+
+
+/* GET team page */
+membersController(router, db);
 
 /* GET memeber page */
 router.get('/fa17g08/TeamMembers/FalcoBecker', function(req, res, next) {
